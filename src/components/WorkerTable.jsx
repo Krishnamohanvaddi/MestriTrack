@@ -24,7 +24,7 @@ import {
   setWorkersList,
   addToAddedWorkers,
   removeWorker,
-} from "../redux/WorkerSlice";
+} from "../redux/workerSlice";
 
 function createData(Name, Type, Wage, Phone, Age, Address, Photo) {
   return { Name, Type, Wage, Phone, Age, Address, Photo };
@@ -232,7 +232,7 @@ export default function WorkerTable() {
         <DialogContent>
           {selectedRow && (
             <DialogContentText>
-               <img
+              <img
                 src={selectedRow.Photo}
                 alt="Worker Photo"
                 style={{
@@ -242,9 +242,9 @@ export default function WorkerTable() {
                   marginLeft: "0px",
                   borderRadius: "10px",
                 }}
-              /><br/>
+              />
+              <br />
               <strong>Name:</strong> {selectedRow.Name} <br />
-          
               <strong>Type:</strong> {selectedRow.Type} <br />
               <strong>Wage:</strong> ₹{selectedRow.Wage}
               <br />
@@ -255,7 +255,15 @@ export default function WorkerTable() {
           )}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseDialog} sx={{border:1,color:'white',background:"linear-gradient(to top,rgb(0, 0, 0),rgb(23, 132, 183))"}}>
+          <Button
+            onClick={handleCloseDialog}
+            sx={{
+              border: 1,
+              color: "white",
+              background:
+                "linear-gradient(to top,rgb(0, 0, 0),rgb(23, 132, 183))",
+            }}
+          >
             Close
           </Button>
         </DialogActions>
